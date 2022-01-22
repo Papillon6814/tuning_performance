@@ -18,6 +18,7 @@ defmodule TuningPerformanceWeb.Router do
     pipe_through :api
 
     get "/", PageController, :index
+    get "/get_post", BlogController, :get_post
     get "/load_post", BlogController, :load_post
     get "/get_tags_by_post_id", BlogController, :get_tags
     post "/create_post", BlogController, :create_post

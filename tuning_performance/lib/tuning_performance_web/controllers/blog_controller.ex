@@ -21,6 +21,18 @@ defmodule TuningPerformanceWeb.BlogController do
     end
   end
 
+  def get_post(conn, %{"post_id" => post_id}) do
+    post = Blog.get_post(post_id)
+
+    render(conn, "post.json", post: post)
+  end
+
+  def load_post(conn, %{"post_id" => post_id}) do
+    post = Blog.load_post(post_id)
+
+    render(conn, "post_preload.json", post: post)
+  end
+
   def get_tags(conn, %{"post_id" => post_id}) do
     tags = Blog.get_tags_by_post_id(post_id)
 
