@@ -12,7 +12,7 @@ defmodule TuningPerformance.Blog.Tag do
   @doc false
   def changeset(tag, attrs) do
     tag
-    |> cast(attrs, [:name])
+    |> cast(attrs, [:name, :post_id])
     |> validate_required([:name])
   end
 end
