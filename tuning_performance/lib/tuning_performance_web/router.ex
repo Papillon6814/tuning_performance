@@ -15,9 +15,13 @@ defmodule TuningPerformanceWeb.Router do
   end
 
   scope "/", TuningPerformanceWeb do
-    pipe_through :browser
+    pipe_through :api
 
     get "/", PageController, :index
+    get "/load_post", BlogController, :load_post
+    get "/get_tags_by_post_id", BlogController, :get_tags_by_post_id
+    post "/create_post", BlogController, :create_post
+    post "/create_tag", BlogController, :create_tag
   end
 
   # Other scopes may use custom stacks.
